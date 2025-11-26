@@ -20,7 +20,7 @@ $ n = 30 &= 2 #sym.dot.op 3 #sym.dot.op 5 \
 == Exercise 1
 \
 +
-  We start by noticing that after decomposing $|G| = m n =  $ that only one prime factor has multiplicity greater than 1, namely $p^k = 5^2$. Thus there is a bijection between the partitions of $k$ and the number of groups with order $m n$.
+  We start by noticing that after decomposing $|G| = m n = #mn $ that only one prime factor has multiplicity greater than 1, namely $p^k = 5^2$. Thus there is a bijection between the partitions of $k$ and the number of groups with order $m n$.
 
   There exists two partitions of 2
   $ (2), (1,1) $
@@ -30,7 +30,7 @@ $ n = 30 &= 2 #sym.dot.op 3 #sym.dot.op 5 \
    G_2 = C_2 times C_3 times C_13, times C_25, \
   $
 
-  The elementry divisors are as follows ${(2,3,5,5,13), (2,3,5,5^2,13)}$
+  The elementary divisors are as follows ${(2,3,5,5,13), (2,3,5^2,13)}$
 
   To compute the invariant factors we use the lemma that $C_a times C_b tilde.eq C_(a b)$ iff $gcd(a,b) = 1$. I.e we re-write the product of the cyclic groups such that we have that the order of the highest order group is divisible by the one with second highest order etc. In our case this is trivial since we only have two groups. We obtain
   $ C_390 times C_5, \
@@ -39,31 +39,38 @@ $ n = 30 &= 2 #sym.dot.op 3 #sym.dot.op 5 \
   and the set of invariant factors is ${(390,5), (1950)}$.
 
 +
-  By using the property that the individual groups are subgroups of direct products with other groups and the same lemmma used in the previous question we obtain for the first group:
+  By using the property that the individual groups are subgroups of direct products with other groups and the same lemma used in the previous question we obtain for the first group:
   $ G_1 = C_2 times C_3 times C_5 times C_5 times C_13 = C_30 times C_5 times C_13 supset C_30 $
 
-  Let the other group be denoted $G_2 = C_2 times C_3 times C_13, times C_25$ Let $a in C_2, b in C_3$ denote generators in respective group, we also know by Cauchy's theorem that there exists some $d in C_25 "s.t" "ord("d")" = 5$. Consider the element $g = (a,b,1,d) in G_2$, its order is determined by $lcm(2,3,1,5)=30$. Thus $chevron.l g chevron.r tilde.eq C_30 subset G_2$ and we haved showed that $C_30$ is a subgroup in all abelian groups of order 1950.
+  Now consdier the other group $G_2 = C_2 times C_3 times C_13, times C_25$. Let $a in C_2, b in C_3$ denote generators in respective group, we also know by Cauchy's theorem that there exists some $d in C_25 "s.t" "ord("d")" = 5$. Consider the element $g = (a,b,1,d) in G_2$, its order is determined by $lcm(2,3,1,5)=30$. Thus $chevron.l g chevron.r tilde.eq C_30 subset G_2$ and we haved showed that $C_30$ is a subgroup in all abelian groups of order 1950.
 
-+ If the group $G$ contains an element of order $m$ then this element also generates a subgroup $chevron.l g chevron.r tilde.eq C_m$. Conversly $C_m$ contains by definition an element of order m. Thus we can apply similair arguments as to the previous question.
++ If the group $G$ contains an element of order $m$ then this element also generates a subgroup $chevron.l g chevron.r tilde.eq C_m$. Conversly $C_m$ contains by definition an element of order m. Thus it suffices to show whether $C_m$ is a subgroup in $G$.
 
  For $G_1$ we can apply the same argument as in the previoius question:
   $ G_1 = C_2 times C_3 times C_5 times C_5 times C_13 = C_2 times C_3 times C_5 times C_65 supset C_65 $
 
-  The argument for $G_2$ is similair to the previous question with $g = (1,1,c,d)$ where $c$ is a generator in $C_13$ and $d$ has order 5.
+  The argument for $G_2$ is similair to the previous question with $g = (1,1,c,d)$ where $c$ is a generator in $C_13$ and $d$ has order 5. We have showed that both $G_1$ and $G_2$ has an element of order $m$.
 
-+ In class we proved that $C_n times C_m = C_(n m) <==> gcd(n,m) = 1$. Since $gcd(n,m) = 5$ in our case we have $C_n times C_m tilde.eq.not C_(n m)$.
-MORE HERE
++ Let $a in C_n, b in C_m$ be generator in their respective groups. The order of $(a,b) in C_n times C_m$ is given by the smallest $s$ such that
+  $ (a,b)^s = (a^s, b^s) = (1_C_n, 1_C_m) $
+  which is given by $s=lcm(n,m)$. Consider the order some arbitrary element $(a^q, b^t),$ due to
+ $ (a^q, b^t)^s = ((a^s)^q, (b^s)^t) = (1_C_n, 1_C_m) $
+  we see that no element has order $>s$.
+
+ By using
+  $ lcm(n,m) = (n m)/gcd(n,m) $
+  we notice that $gcd(n,m) > 1 => "ord"(a^q,b^t) < n m => C_n times C_m tilde.eq.not C_(n m).$ Since $gcd(n,m) = 5$ in our case we have $C_30 times C_65 tilde.eq.not C_(1950)$.
 
 == Exercise 2 
 \
 + We have $a=(425), b=(195)$
   $ x = a #sym.dot.op b #sym.dot.op (1234) = (15)(23)(49) $
 
-+ Since x is a product of 3 transpositions its cycle type is $(2,2,2)$ and its order is 2. That is because the order of the product is the lcm of the cycle lengths and $lcm(2,2,2) = 2$.
++ Since $x$ is a product of 3 transpositions its cycle type is $(2,2,2,1,1,1)$ and its order is 2. That is because the order of the product is the lcm of the cycle lengths and $lcm(2,2,2) = 2$.
 
 + Firstly write out the integers $1..9$ in any order, this can be done in $9!$ ways. We then fix the parantheses according to our cycle type.
-  $ s = (a,b)(c,d)(e,f)(g)(h) $
-  Since $(a,b)=(b,a)$ we divide by $2^3$. Note that permuting any two cycles of same length gives us a different element according to our counting but still yields the same element in $S_9$ due to the cycles being disjoint. Therefore we also divide by $3! #sym.dot.op 3!$, finally we obtain
+  $ s = (a b)(c d)(e f)(g)(h)(i) $
+  Since any cycle of length $n$ can be written in $n$ ways, e.g $(a b)=(b a)$, we divide by $2^3$. Note that permuting any two cycles of same length gives us a different element according to our counting but still yields the same element in $S_9$ due to the cycles being disjoint. Therefore we also divide by $3! #sym.dot.op 3!$, finally we obtain
 
 $ |"Cl"(s)| = 9!/(2^3 3! 3!) = 1260 $
  
